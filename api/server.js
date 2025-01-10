@@ -16,6 +16,14 @@ app.get("/", async (req, res) => {
   res.send('Hello World');
 });
 
+app.get('/users', async (req , res)=>{
+res.json({
+    name : "sharjeel ",
+    age : 23,
+    city : "cairo"
+})
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
  
