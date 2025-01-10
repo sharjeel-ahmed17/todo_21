@@ -1,13 +1,22 @@
 import express from 'express';
+import mongoose from 'mongoose';
 const app = express();
 const port = 5000;
 
-app.use(express.json());
 
+// middleware
+app.use(express.json());
+// connected db
+mongoose.connect('mongodb+srv://xaxigog303:779WmXOXp6RAhNam@cluster0.p68tn.mongodb.net/').then(()=> console.log('db connected')
+).catch((err)=> console.log('unavalble to connect db')
+)
+
+//routes 
 app.get("/", async (req, res) => {
   res.send('Hello World');
 });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+ 
 });
